@@ -6,18 +6,15 @@ Array.from(buttons).forEach(function (el) {
 })
 
 function createRipple(e) {
-    var bobble = document.createElement('div');
+    var bobble = document.createElement('div'),
+        d = Math.max(this.clientWidth, this.clientHeight);
+
     this.appendChild(bobble);
-    var d = Math.max(this.clientWidth, this.clientHeight)
 
     bobble.style.width = bobble.style.height = d + 'px';
-
     bobble.style.left = e.clientX - this.offsetLeft - d/2 + 'px';
     bobble.style.top = e.clientY - this.offsetTop - d/2 + 'px';
-    //
     bobble.classList.add('ripple');
-    var btn = this
-    setTimeout(function () {
-        btn.removeChild(bobble);
-    },700)
+
+    setTimeout(function () { this.removeChild(bobble); }.bind(this),700)
 }
