@@ -1,0 +1,33 @@
+.material-button {
+    width: 140px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    position: relative;
+    outline: none;
+    -webkit-appearance: none;
+    font-size: 16px;
+    background: blue;
+    color: white;
+    font-family: Futura;
+    box-shadow: none;
+    border: none;
+    overflow: hidden;
+}
+
+.ripple {
+    border-radius: 50%;
+    background-color: rgba(255,255,255, .7);
+    position: absolute;
+    animation: ripple .6s linear;
+    transform: scale(0);
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
